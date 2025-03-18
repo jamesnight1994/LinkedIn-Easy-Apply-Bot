@@ -1,0 +1,35 @@
+username: <your-linkedin-email>
+password: <your-linkedin-password>
+phone_number: <your-phone-number>
+
+profile_path: '' #can be empty, will default to 'C:\Users\<user>\AppData\Local\Google\Chrome\User Data\Default'
+
+
+positions:
+- Software Engineer
+
+
+locations:
+- Nairobi
+- Remote
+
+salary: 48,000
+rate: 25
+# --------- Optional Parameters -------
+uploads:
+  Resume: C:\Users\james\Downloads\Backend Developer CV.docx (1).pdf
+
+
+output_filename:
+- C:\Users\james\Downloads\LinkedIn-Easy-Apply-Bot\out.csv
+
+# blacklist:
+# - # Company names you want to ignore
+
+experience_level:
+  # - 1 # Entry level
+  # - 2 # Associate
+  - 3 # Mid-Senior level
+  # - 4 # Director
+  # - 5 # Executive
+  # - 6 # Internship

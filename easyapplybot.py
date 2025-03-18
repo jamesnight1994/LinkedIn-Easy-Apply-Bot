@@ -177,24 +177,18 @@ class EasyApplyBot:
         log.info("Logging in.....Please wait :)  ")
         self.browser.get("https://www.linkedin.com/login?trk=guest_homepage-basic_nav-header-signin")
         try:
-            user_field = self.browser.find_element("id","username")
-            pw_field = self.browser.find_element("id","password")
-            login_button = self.browser.find_element("xpath",
-                        '//*[@id="organic-div"]/form/div[3]/button')
+            # Updated selectors
+            user_field = self.browser.find_element(By.ID, "username")
+            pw_field = self.browser.find_element(By.ID, "password")
+            login_button = self.browser.find_element(By.CSS_SELECTOR, "button[type='submit']")
+            
             user_field.send_keys(username)
-            user_field.send_keys(Keys.TAB)
             time.sleep(2)
             pw_field.send_keys(password)
             time.sleep(2)
             login_button.click()
             time.sleep(15)
-            # if self.is_present(self.locator["2fa_oneClick"]):
-            #     oneclick_auth = self.browser.find_element(by='id', value='reset-password-submit-button')
-            #     if oneclick_auth is not None:
-            #         log.info("additional authentication required, sleep for 15 seconds so you can do that")
-            #         time.sleep(15)
-            # else:
-            #     time.sleep()
+            
         except TimeoutException:
             log.info("TimeoutException! Username/password field or login button not found")
 
